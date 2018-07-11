@@ -1,15 +1,14 @@
-package icom.company.songwordcounter.service;
+package com.company.songwordcounter.service.impl;
 
-import icom.company.songwordcounter.model.Actor;
-import icom.company.songwordcounter.repository.ActorRepository;
+import com.company.songwordcounter.model.Actor;
+import com.company.songwordcounter.repository.ActorRepository;
+import com.company.songwordcounter.service.ActorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service
-@Transactional
+@Service("actorService")
 public class ActorServiceImpl implements ActorService {
 
 	private ActorRepository actorRepository;
@@ -33,16 +32,22 @@ public class ActorServiceImpl implements ActorService {
 
 	@Override
 	public Actor update(Long id, Actor actor) {
-		return null;
+		Actor tmp = actorRepository.findById(id).get();
+		if (tmp != null) {
+			tmp.setName(actor.getName());
+			tmp.setSongs(actor.getSongs());
+			actorRepository.save(tmp);
+			return tmp;
+		} else return null;
 	}
 
 	@Override
 	public Actor getOne(Long id) {
-		return null;
+		return actorRepository.findById(id).get();
 	}
 
 	@Override
 	public List<Actor> getAll() {
-		return null;
+		return actorRepository.findAll();
 	}
 }

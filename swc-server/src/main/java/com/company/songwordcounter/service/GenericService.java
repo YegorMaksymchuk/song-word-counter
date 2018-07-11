@@ -1,4 +1,4 @@
-package icom.company.songwordcounter.service;
+package com.company.songwordcounter.service;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package icom.company.songwordcounter.model;
+package com.company.songwordcounter.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +10,7 @@ import java.util.Set;
 
 @Getter
 @Setter
-@Document
+@Document(collection = "actors")
 public class Actor {
 
 	@Id
@@ -22,11 +22,9 @@ public class Actor {
 
 	@Override
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		return "Actor{" +
-				"id=" + id +
-				", name='" + name + '\'' +
-				", songs=" + songs +
-				'}';
+		return new StringBuilder()
+				.append("{ id: " + id + ", ")
+				.append("name: " + name + ", ")
+				.append("songs: [" + songs + "]}").toString();
 	}
 }

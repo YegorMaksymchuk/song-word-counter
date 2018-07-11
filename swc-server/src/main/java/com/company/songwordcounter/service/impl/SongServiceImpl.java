@@ -1,8 +1,9 @@
-package icom.company.songwordcounter.service;
+package com.company.songwordcounter.service.impl;
 
-import icom.company.songwordcounter.model.Actor;
-import icom.company.songwordcounter.model.Song;
-import icom.company.songwordcounter.repository.SongRepository;
+import com.company.songwordcounter.model.Actor;
+import com.company.songwordcounter.model.Song;
+import com.company.songwordcounter.repository.SongRepository;
+import com.company.songwordcounter.service.SongService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -41,7 +42,7 @@ public class SongServiceImpl implements SongService {
 		if (tmp != null) {
 			tmp.setActor(song.getActor());
 			tmp.setTitle(song.getTitle());
-			tmp.setText(song.getText());
+			tmp.setWords(song.getWords());
 			songRepository.save(tmp);
 			return tmp;
 		} else return null;

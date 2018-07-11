@@ -1,4 +1,4 @@
-package icom.company.songwordcounter;
+package com.company.songwordcounter;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

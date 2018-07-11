@@ -1,4 +1,4 @@
-package icom.company.songwordcounter.model;
+package com.company.songwordcounter.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +11,7 @@ import java.util.Set;
 
 @Getter
 @Setter
-@Document
+@Document(collection = "songs")
 public class Song {
 
 	@Id
@@ -21,6 +21,14 @@ public class Song {
 	@Field
 	String title;
 	@Field
-	Set<String> text = new HashSet<String>(0);
+	Set<String> words = new HashSet<String>(0);
 
+	@Override
+	public String toString() {
+		return new StringBuilder()
+				.append("{ id: " + id + ", ")
+				.append("actor: " + actor + ", ")
+				.append("title: " + title + ", ")
+				.append("words: [" + words + "] }").toString();
+	}
 }
