@@ -4,11 +4,9 @@ import icom.company.songwordcounter.model.Actor;
 import icom.company.songwordcounter.service.ActorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,9 +24,13 @@ public class ActorRestController {
 		this.actorService = actorService;
 	}
 
-	@RequestMapping(path = "/actors", method = RequestMethod.GET)
+	@RequestMapping(path = "/actors", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ResponseEntity<List<Actor>> getAllActors() {
-		return new ResponseEntity<List<Actor>>(actorService.getAllActors(), HttpStatus.OK);
+		return new ResponseEntity<List<Actor>>(actorService.getAll(), HttpStatus.OK);
 	}
 
+	@RequestMapping(path = "/actor/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public ResponseEntity<Actor> getOne(@PathVariable Long id) {
+		return new ResponseEntity<Actor>(actorService.getOne(id), HttpStatus.OK);
+	}
 }
