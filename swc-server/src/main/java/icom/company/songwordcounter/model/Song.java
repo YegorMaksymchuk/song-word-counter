@@ -13,6 +13,6 @@ public class Song {
 	Long id;
 	Actor actor;
 	String title;
-	Set<String> text = new HashSet<>();
+	Set<String> text = new HashSet<String>(0);
 
 }
