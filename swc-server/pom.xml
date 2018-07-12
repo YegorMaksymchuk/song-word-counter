@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.company</groupId>
-    <artifactId>song-word-counter</artifactId>
+    <artifactId>swc-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>song-word-counter</name>
+    <parent>
+        <groupId>com.company</groupId>
+        <artifactId>song-word-counter</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <name>swc-server</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -16,15 +22,15 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <swagger.version>2.8.0</swagger.version>
+        <spring.boot.version>2.0.3.RELEASE</spring.boot.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <!-- Import dependency management from Spring Boot -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.0.3.RELEASE</version>
+                <version>${spring.boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -85,6 +91,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>
