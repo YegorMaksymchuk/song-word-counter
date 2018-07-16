@@ -10,4 +10,6 @@ public interface SparkService {
 	List<Song> getSongs(Actor actor);
 
 	Report findCoincidence(Actor firstActor, Actor secondActor);
+
+	Report findCoincidence(List<Actor> actors);
 }
