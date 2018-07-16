@@ -4,10 +4,12 @@ package com.company.songwordcounter.service.impl;
 import com.company.songwordcounter.dto.Report;
 import com.company.songwordcounter.model.Actor;
 import com.company.songwordcounter.model.Song;
+import com.company.songwordcounter.repository.ActorRepository;
 import com.company.songwordcounter.service.SparkService;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.sql.SparkSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import scala.Tuple2;
 
@@ -17,6 +19,13 @@ import java.util.regex.Pattern;
 
 @Service("sparkService")
 public class SparkServiceImpl implements SparkService {
+
+	private ActorRepository actorRepository;
+
+	@Autowired
+	public SparkServiceImpl(ActorRepository actorRepository) {
+		this.actorRepository = actorRepository;
+	}
 
 	@Override
 	public List<Song> getSongs(Actor actor) {

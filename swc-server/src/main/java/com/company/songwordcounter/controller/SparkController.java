@@ -3,6 +3,7 @@ package com.company.songwordcounter.controller;
 import com.company.songwordcounter.dto.Report;
 import com.company.songwordcounter.model.Actor;
 import com.company.songwordcounter.service.SparkService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@Api
 @RestController
 @RequestMapping(path = "/api/spark")
 public class SparkController {

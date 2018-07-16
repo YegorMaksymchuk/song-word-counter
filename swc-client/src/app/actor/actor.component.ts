@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-actor',
@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./actor.component.css']
 })
 export class ActorComponent implements OnInit {
+  @Input() actor;
 
-  constructor() { }
+  isSelected = false;
+
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  onClick() {
+    this.isSelected = true;
+    console.log(this.actor.name + ' selected');
   }
 
 }

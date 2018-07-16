@@ -26,10 +26,6 @@ public class TMPSpark {
 
 		JavaRDD<String> words = korn.flatMap(s -> Arrays.asList(SPACE.split(s)).iterator());
 
-		JavaRDD<String> words3 = mm.flatMap(s -> Arrays.asList(SPACE.split(s)).iterator());
-
-
-
 		System.out.println("==========================");
 		JavaPairRDD<String, Integer> ones = words.mapToPair(s -> new Tuple2<>(s, 1));
 

@@ -36,6 +36,8 @@ public class ActorServiceImpl implements ActorService {
 		if (tmp != null) {
 			tmp.setName(actor.getName());
 			tmp.setSongs(actor.getSongs());
+			tmp.setDescription(actor.getDescription());
+			tmp.setImage(actor.getImage());
 			actorRepository.save(tmp);
 			return tmp;
 		} else return null;

@@ -1,3 +1,16 @@
-<p>
-  actor works!
-</p>
+<div class="col s3 m3">
+  <div class="card" appHover>
+    <div class="card-image">
+      <img src="{{actor.image}}">
+      <span
+        [ngClass]="{'selected': isSelected}"
+        class="card-title">{{actor.name }}</span>
+    </div>
+    <div class="card-content">
+      <p>{{actor.description}}</p>
+    </div>
+    <div class="card-action">
+      <a (click)="onClick()"  class="waves-effect waves-light btn">button</a>
+    </div>
+  </div>
+</div>

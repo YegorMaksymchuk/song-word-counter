@@ -12,19 +12,24 @@ import java.util.Set;
 @Setter
 @Document(collection = "actors")
 public class Actor {
-
 	@Id
-	Long id;
+	private Long id;
 	@Field
-	String name;
+	private String name;
 	@Field
-	Set<Song> songs;
+	private String image;
+	@Field
+	private String description;
+	@Field
+	private Set<Song> songs;
 
 	@Override
 	public String toString() {
 		return new StringBuilder()
 				.append("{ id: " + id + ", ")
 				.append("name: " + name + ", ")
+				.append("image: " + image + ", ")
+				.append("description: " + description + ", ")
 				.append("songs: [" + songs + "]}").toString();
 	}
 }

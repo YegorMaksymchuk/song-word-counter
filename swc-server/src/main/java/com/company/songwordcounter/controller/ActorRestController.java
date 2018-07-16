@@ -46,8 +46,8 @@ public class ActorRestController {
 		return new ResponseEntity<Actor>(actorService.save(actor), HttpStatus.OK);
 	}
 
-	@RequestMapping(method = RequestMethod.PUT, path = "/update/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public ResponseEntity<Actor> update(@RequestParam Long id, @RequestBody Actor actor) {
-		return new ResponseEntity<Actor>(actorService.update(id, actor), HttpStatus.OK);
+	@RequestMapping(method = RequestMethod.PUT, path = "/update", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public ResponseEntity<Actor> update(@RequestParam String id, @RequestBody Actor actor) {
+		return new ResponseEntity<Actor>(actorService.update(Long.valueOf(id), actor), HttpStatus.OK);
 	}
 }

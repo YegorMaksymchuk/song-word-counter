@@ -10,11 +10,10 @@ import java.util.Set;
 @Setter
 public class Song {
 
-
-	Long id;
-	Actor actor;
-	String title;
-	Set<String> words = new HashSet<String>(0);
+	private Long id;
+	private Actor actor;
+	private String title;
+	private Set<String> words = new HashSet<String>(0);
 
 	@Override
 	public String toString() {
