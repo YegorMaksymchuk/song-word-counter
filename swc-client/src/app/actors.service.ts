@@ -11,7 +11,7 @@ export class ActorsService {
   getActors() {
     return this.http.get('http://localhost:8081/api/actor/all')
       .map(function (response) {
-        console.log(response.json)
+        console.log(response)
         return response.json();
       });
   }

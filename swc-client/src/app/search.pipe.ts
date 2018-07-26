@@ -6,7 +6,9 @@ import 'rxjs/add/operator/map';
 })
 export class SearchPipe implements PipeTransform {
 
-  transform(actors, value) {
-    return actors.getActors();
+  transform(response, value) {
+    return response.filter(actor =>{
+      return actor.name.toUpperCase().includes(value.toUpperCase());
+    });
   }
 }

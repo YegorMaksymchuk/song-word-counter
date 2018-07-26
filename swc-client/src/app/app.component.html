@@ -2,13 +2,13 @@
 
   <div class="row">
     <div class="input-field col s6">
-      <input id="name" type="text" class="validate">
+      <input id="name" type="text" class="validate" [(ngModel)]="searchName">
       <label class="active" for="name">Search by name</label>
     </div>
   </div>
 
   <div class="row">
-    <app-actor *ngFor="let actor of actors " [actor]="actor"></app-actor>
+    <app-actor *ngFor="let actor of actors | search:searchName" [actor]="actor"></app-actor>
   </div>
 </div>
 

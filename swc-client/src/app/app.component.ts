@@ -10,7 +10,7 @@ import {ActorsService} from './actors.service';
 export class AppComponent {
 
   actors;
-
+  searchName = '';
   constructor(private actorsService: ActorsService) {
     this.actorsService.getActors().subscribe(actors => {
       this.actors = actors;
