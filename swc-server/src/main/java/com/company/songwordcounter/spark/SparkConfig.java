@@ -12,7 +12,7 @@ public class SparkConfig {
 				.getOrCreate();
 	}
 
-	public static synchronized SparkSession sparkSessionFactoryLocal(String appName) {
+	public static synchronized SparkSession sparkLocalSessionFactory(String appName) {
 		return SparkSession
 				.builder()
 				.appName(appName)

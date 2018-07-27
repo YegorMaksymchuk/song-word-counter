@@ -10,6 +10,7 @@
     <modules>
         <module>swc-server</module>
         <module>swc-txt-to-json</module>
+        <module>swc-client</module>
     </modules>
 
 </project>
