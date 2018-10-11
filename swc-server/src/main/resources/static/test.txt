@@ -1,9 +1,0 @@
-docker run -d --name sw-mongodb \
--p 27017:27017 \
--e MONGO_INITDB_ROOT_USERNAME=mongoadmin \
--e MONGO_INITDB_ROOT_PASSWORD=mongopwd mongo
-
-docker exec -it sw-mongodb bash
--u mongoadmin -p mongopwd --authenticationDatabase admin swcdb
-
-mongo -u mongoadmin -p mongopwd --host localhost --port 27017 --authenticationDatabase admin swcdb
