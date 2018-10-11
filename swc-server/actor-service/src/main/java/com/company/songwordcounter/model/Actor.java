@@ -1,5 +1,6 @@
 package com.company.songwordcounter.model;
 
+import com.google.common.base.Objects;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
@@ -33,4 +34,21 @@ public class Actor implements Serializable {
 				.append("description: " + description + ", ")
 				.append("songs: [" + songs + "]}").toString();
 	}
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Actor actor = (Actor) o;
+        return Objects.equal(id, actor.id) &&
+                Objects.equal(name, actor.name) &&
+                Objects.equal(image, actor.image) &&
+                Objects.equal(description, actor.description) &&
+                Objects.equal(songs, actor.songs);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id, name, image, description, songs);
+    }
 }
